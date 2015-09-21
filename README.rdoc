@@ -1,0 +1,13 @@
+== Twitter Clone
+
+This is a sample application that is basically empty at this point.
+
+A complete version of this application would have:
+
+1. A public feed of users' posts at '/'
+2. A feed for each user at '/users/<username>/'
+
+The application has been set up with Devise for user authentication and login
+with the 'user' model. 
+
+

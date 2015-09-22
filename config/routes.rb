@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+
+  get '/:username', to: 'users#show'
+
+  resources :tweets
   devise_for :users
+  resources :followings, only: [:create, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

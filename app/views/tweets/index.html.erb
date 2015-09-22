@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="list-group">
+      <% @tweets.each do |tweet| %>
+        <div class="list-group-item">
+          <div class="media">
+            <div class="media-left">
+              <%= link_to gravatar(email: tweet.user.email, size: 64, class: 'media-object'),
+                controller: :users, action: :show, username: tweet.user.username %>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                <em class="text-muted small"><%= tweet.created_at.strftime("%b %d %I:%M %p") %></em>
+              </h4>
+              <%= tweet.body %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if @tweets.size == 0 %>
+        <p class="text-muted">Silence...</p>
+      <% end %>
+    </div>
+  </div>
+<br>
